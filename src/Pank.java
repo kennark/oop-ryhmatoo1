@@ -28,14 +28,14 @@ public class Pank {
             String rida = scanner.nextLine();
             String[] osad = rida.split("; ");
 
-            if (osad.length == 6) {
-                Klient klient = new Klient(osad[0]);
+            if (osad.length == 7) {
+                Klient klient = new Klient(osad[0], osad[1]);
 
                 if (!kliendid.contains(klient)) kliendid.add(klient);
 
-                kontod.add(new Pangakonto(klient, Integer.parseInt(osad[1]),
-                        Double.parseDouble(osad[2]), Double.parseDouble(osad[3]),
-                        Double.parseDouble(osad[4]), Integer.parseInt(osad[5])));
+                kontod.add(new Pangakonto(klient, Integer.parseInt(osad[2]),
+                        Double.parseDouble(osad[3]), Double.parseDouble(osad[4]),
+                        Double.parseDouble(osad[5]), Integer.parseInt(osad[6])));
 
             } else if (osad.length == 4) {
                 Pangakonto saaja = null;
@@ -49,7 +49,11 @@ public class Pank {
                         saatja = konto;
                     }
                 }
-                tehingud.add(new Tehing(Integer.parseInt(osad[0]), saaja, saatja, Double.parseDouble(osad[3])));
+                if (saatja.getKlient().getRiik().equals(saaja.getKlient().getRiik())){
+                    tehingud.add(new SiseriiklikMakse(Integer.parseInt(osad[0]), saaja, saatja, Double.parseDouble(osad[3])));
+                } else {
+                    tehingud.add(new Välismakse(Integer.parseInt(osad[0]), saaja, saatja, Double.parseDouble(osad[3])));
+                }
             }
         }
     }
@@ -59,7 +63,7 @@ public class Pank {
         FileWriter kirjutaja = new FileWriter(failinimi);
         for (Pangakonto konto: kontod) {
             kirjutaja.write(
-                    konto.getKlient() + "; " + konto.getKontoNumber() + "; " +
+                    konto.getKlient().getNimi() +"; " + konto.getKlient().getRiik() + "; " + konto.getKontoNumber() + "; " +
                             konto.getKontoJääk() + "; " + konto.getVäljaminekud() + "; " +
                             konto.getSissetulekud() + "; " + konto.getTehinguteArv() + "\n");
         }
@@ -84,22 +88,25 @@ public class Pank {
         // nagu mingi sotsiaalmeedia stiilis reklaam
 
 
-        String sisestus = JOptionPane.showInputDialog(null,
+        String kliendiNimi = JOptionPane.showInputDialog(null,
                 "Sisesta oma ees- ja perekonnanimi",
                 "Logi sisse/ava konto",
                 JOptionPane.QUESTION_MESSAGE);
-
+        String kliendiRiik = JOptionPane.showInputDialog(null,
+                "Sisesta enda koduriik",
+                "Logi sisse/ava konto",
+                JOptionPane.QUESTION_MESSAGE);
         // kui sisestatud nimi juba eksisteerib, siis "logib sisse" sellesse kontosse
         for (Pangakonto konto : kontod) {
-            if (konto.getKlient().toString().equals(sisestus)) {
+            if (konto.getKlient().toString().equals(kliendiNimi)) {
                 return konto;
             }
         }
 
         // muidu läheb edasi ja "loob konto"
-        Klient kasutaja = new Klient(sisestus);
+        Klient kasutaja = new Klient(kliendiNimi, kliendiRiik);
         // algne kontosumma
-        sisestus = JOptionPane.showInputDialog(null,
+        kliendiNimi = JOptionPane.showInputDialog(null,
                 "Kui palju raha sinul on kontole panna?",
                 "Ava konto",
                 JOptionPane.QUESTION_MESSAGE);
@@ -114,7 +121,7 @@ public class Pank {
             }
         }
         // loob uue konto
-        Pangakonto kasutajaKonto = new Pangakonto(kasutaja, uusKontoNumber, Double.parseDouble(sisestus));
+        Pangakonto kasutajaKonto = new Pangakonto(kasutaja, uusKontoNumber, Double.parseDouble(kliendiNimi));
         kontod.add(kasutajaKonto);
 
         return kasutajaKonto;
@@ -142,7 +149,12 @@ public class Pank {
                 }
 
                 // loob vastava tehingu ja salvestab selle
-                tehingud.add(new Tehing(tehingud.size(), konto, saatja, summa));
+                if (saatja.getKlient().getRiik().equals(konto.getKlient().getRiik())){
+                    tehingud.add(new SiseriiklikMakse(tehingud.size(), konto, saatja, summa));
+                } else {
+                    tehingud.add(new Välismakse(tehingud.size(), konto, saatja, summa));
+                }
+
                 System.out.println("Tehing edukalt sooritatud!");
                 return;
             }
