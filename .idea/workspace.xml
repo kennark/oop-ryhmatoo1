@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="20085634-cf05-4782-afab-f2dfde3cc15c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kontod.txt" beforeDir="false" afterPath="$PROJECT_DIR$/kontod.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pank.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +38,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/stuff/KOOL/OOP/oop-ryhmatoo1&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>

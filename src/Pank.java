@@ -92,16 +92,17 @@ public class Pank {
                 "Sisesta oma ees- ja perekonnanimi",
                 "Logi sisse/ava konto",
                 JOptionPane.QUESTION_MESSAGE);
-        String kliendiRiik = JOptionPane.showInputDialog(null,
-                "Sisesta enda koduriik",
-                "Logi sisse/ava konto",
-                JOptionPane.QUESTION_MESSAGE);
+
         // kui sisestatud nimi juba eksisteerib, siis "logib sisse" sellesse kontosse
         for (Pangakonto konto : kontod) {
             if (konto.getKlient().toString().equals(kliendiNimi)) {
                 return konto;
             }
         }
+        String kliendiRiik = JOptionPane.showInputDialog(null,
+                "Sisesta enda koduriik",
+                "Logi sisse/ava konto",
+                JOptionPane.QUESTION_MESSAGE);
 
         // muidu läheb edasi ja "loob konto"
         Klient kasutaja = new Klient(kliendiNimi, kliendiRiik);
