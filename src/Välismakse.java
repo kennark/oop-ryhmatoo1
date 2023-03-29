@@ -21,6 +21,8 @@ public class Välismakse extends Tehing{
 
     @Override
     public String toString() {
-        return super.toString() + " Teenustasu: " + teenustasu + ", kogusumma: " + (getSaadetudSumma()+teenustasu) + ". " + saatja.getKlient().getRiik() + " -> " + saaja.getKlient().getRiik();
+        return super.toString() + " Teenustasu: " + teenustasu +
+                ", kogusumma: " + (getSaadetudSumma()+teenustasu) + ". " +
+                saatja.getKlient().getRiik() + " -> " + saaja.getKlient().getRiik();
     }
 }
