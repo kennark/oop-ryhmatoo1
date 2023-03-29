@@ -24,31 +24,33 @@ public class Peaklass {
                             "sulge" - sulge rakendus""",
                     "Vali tegevus",
                     JOptionPane.QUESTION_MESSAGE);
-            switch (sisestus) {
-                case "lisa":
-                    pank.lisaRaha(kasutajaKonto);
-                    break;
-                case "sula":
-                    pank.väljastaRaha(kasutajaKonto);
-                    break;
-                case "saada":
-                    pank.teeTehing(kasutajaKonto);
-                    break;
-                case "jääk":
-                    pank.kontoJääk(kasutajaKonto);
-                    break;
-                case "kokkuvõte":
-                    System.out.println(kasutajaKonto.bilanss());
-                    break;
-                case "tehingud":
-                    pank.näitaTehinguid();
-                    break;
-                case "sulge":
-                    break label;
-                default:
-                    System.out.println("Vale käsklus!");
-                    break;
-            }
+            if (sisestus != null) {
+                switch (sisestus) {
+                    case "lisa":
+                        pank.lisaRaha(kasutajaKonto);
+                        break;
+                    case "sula":
+                        pank.väljastaRaha(kasutajaKonto);
+                        break;
+                    case "saada":
+                        pank.teeTehing(kasutajaKonto);
+                        break;
+                    case "jääk":
+                        pank.kontoJääk(kasutajaKonto);
+                        break;
+                    case "kokkuvõte":
+                        System.out.println(kasutajaKonto.bilanss());
+                        break;
+                    case "tehingud":
+                        pank.näitaTehinguid();
+                        break;
+                    case "sulge":
+                        break label;
+                    default:
+                        System.out.println("Vale käsklus!");
+                        break;
+                }
+            } else break;
             System.out.println();
         }
 

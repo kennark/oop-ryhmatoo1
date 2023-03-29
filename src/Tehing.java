@@ -28,6 +28,7 @@ public abstract class Tehing {
     }
 
     public abstract String maksetüüp();
+    public abstract void teostaMakse();
     @Override
     public String toString() {
         return maksetüüp() + " - Tehing nr " + (tehinguNumber+1) + ": " + saatja.getKlient() +

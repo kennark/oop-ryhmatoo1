@@ -52,7 +52,7 @@ public class Pangakonto {
     @Override
     public String toString() {
         return "Konto " + kontoNumber + " kuulub isikule " + klient.toString() +
-                ", kontol on praegu raha " + kontoJääk + " eurot. Sellega on tehtud " + tehinguteArv + " tehingut.";
+                ", kontol on praegu raha " + Math.round(kontoJääk*100)/100.0 + " eurot. Sellega on tehtud " + tehinguteArv + " tehingut.";
     }
 
     public String bilanss(){
