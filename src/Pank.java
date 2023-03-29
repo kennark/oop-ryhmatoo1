@@ -129,17 +129,27 @@ public class Pank {
     }
 
     public void teeTehing(Pangakonto saatja){
-        String saajaNumber = JOptionPane.showInputDialog(null,
-                "Mis konto numbrile saadad?",
-                "Saada raha",
-                JOptionPane.QUESTION_MESSAGE);
+        int saaja;
+        while (true) {
+            String saajaNumber = JOptionPane.showInputDialog(null,
+                    "Mis konto numbrile saadad?",
+                    "Saada raha",
+                    JOptionPane.QUESTION_MESSAGE);
+            try {
+                saaja = Integer.parseInt(saajaNumber);
+                break;
+            } catch (Exception NumberFormatException) {
+                System.out.println("Sisesta kontonumber, mitte nimi!");
+            }
+        }
 
         for (Pangakonto konto : kontod) {
             // enne järgmist akent otsib konto numbri juba üles
-            if (konto.getKontoNumber() == Integer.parseInt(saajaNumber)){
+            if (konto.getKontoNumber() == saaja){
 
                 String saadab = JOptionPane.showInputDialog(null,
-                        "Sinul raha: " + saatja.getKontoJääk() + "\nKui palju raha saadad?",
+                        "Sinul raha: " + saatja.getKontoJääk() + "\nKui palju raha saadad?" +
+                                (!konto.getKlient().getRiik().equals(saatja.getKlient().getRiik()) ? "\nTeenustasu 5 eurot" : ""), // kui on teenustasu, siis näitab seda
                         "Saada raha isikule " + konto.getKlient(),
                         JOptionPane.QUESTION_MESSAGE);
 
@@ -150,11 +160,14 @@ public class Pank {
                 }
 
                 // loob vastava tehingu ja salvestab selle
+                Tehing tehing;
                 if (saatja.getKlient().getRiik().equals(konto.getKlient().getRiik())){
-                    tehingud.add(new SiseriiklikMakse(tehingud.size(), konto, saatja, summa));
+                    tehing = new SiseriiklikMakse(tehingud.size(), konto, saatja, summa);
                 } else {
-                    tehingud.add(new Välismakse(tehingud.size(), konto, saatja, summa));
+                    tehing = new Välismakse(tehingud.size(), konto, saatja, summa);
                 }
+                tehing.teostaMakse();
+                tehingud.add(tehing);
 
                 System.out.println("Tehing edukalt sooritatud!");
                 return;
