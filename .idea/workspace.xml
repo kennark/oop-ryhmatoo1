@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20085634-cf05-4782-afab-f2dfde3cc15c" name="Changes" comment="eemaldasin ebavajaliku konstruktori">
+    <list default="true" id="20085634-cf05-4782-afab-f2dfde3cc15c" name="Changes" comment="main eemaldatud">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -78,7 +78,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680109076872</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="main eemaldatud">
+      <created>1680109912628</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1680109912628</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -89,7 +96,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -98,6 +117,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="küsib riiki ainult esimesel sisselogimisel" />
     <MESSAGE value="eemaldasin ebavajaliku konstruktori" />
-    <option name="LAST_COMMIT_MESSAGE" value="eemaldasin ebavajaliku konstruktori" />
+    <MESSAGE value="main eemaldatud" />
+    <option name="LAST_COMMIT_MESSAGE" value="main eemaldatud" />
   </component>
 </project>
