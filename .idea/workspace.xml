@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20085634-cf05-4782-afab-f2dfde3cc15c" name="Changes" comment="main eemaldatud">
-      <change beforePath="$PROJECT_DIR$/src/Pank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Peaklass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Peaklass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SiseriiklikMakse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SiseriiklikMakse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tehing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tehing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Välismakse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Välismakse.java" afterDir="false" />
-    </list>
+    <list default="true" id="20085634-cf05-4782-afab-f2dfde3cc15c" name="Changes" comment="main eemaldatud" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,9 +35,6 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "D:/stuff/KOOL/OOP/oop-ryhmatoo1",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "vue.rearranger.settings.migration": "true"
   }
@@ -127,6 +118,7 @@
     <MESSAGE value="küsib riiki ainult esimesel sisselogimisel" />
     <MESSAGE value="eemaldasin ebavajaliku konstruktori" />
     <MESSAGE value="main eemaldatud" />
-    <option name="LAST_COMMIT_MESSAGE" value="main eemaldatud" />
+    <MESSAGE value="parandatud vead, raha ei haihtu enam iga laadimisega" />
+    <option name="LAST_COMMIT_MESSAGE" value="parandatud vead, raha ei haihtu enam iga laadimisega" />
   </component>
 </project>
