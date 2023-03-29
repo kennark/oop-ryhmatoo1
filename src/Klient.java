@@ -6,10 +6,6 @@ public class Klient {
         this.nimi = nimi;
         this.riik = riik;
     }
-    public Klient(String nimi) {
-        this.nimi = nimi;
-        this.riik = "Eesti"; // kui riiki ei anta, siis vaikimisi on riigiks Eesti
-    }
 
     public String getNimi(){
         return nimi;

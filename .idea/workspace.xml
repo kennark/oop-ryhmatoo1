@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20085634-cf05-4782-afab-f2dfde3cc15c" name="Changes" comment="">
+    <list default="true" id="20085634-cf05-4782-afab-f2dfde3cc15c" name="Changes" comment="küsib riiki ainult esimesel sisselogimisel">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kontod.txt" beforeDir="false" afterPath="$PROJECT_DIR$/kontod.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pank.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +64,14 @@
       <updated>1679839067594</updated>
       <workItem from="1679839068866" duration="190000" />
     </task>
+    <task id="LOCAL-00001" summary="küsib riiki ainult esimesel sisselogimisel">
+      <created>1680025291892</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1680025291892</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -81,5 +87,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="küsib riiki ainult esimesel sisselogimisel" />
+    <option name="LAST_COMMIT_MESSAGE" value="küsib riiki ainult esimesel sisselogimisel" />
   </component>
 </project>
