@@ -94,9 +94,19 @@ public class Pank {
                 "Logi sisse/ava konto",
                 JOptionPane.QUESTION_MESSAGE);
 
+        // teisendab nime algustähed suurteks
+        String[] nimeOsad  = kliendiNimi.split("\\s+");
+        StringBuilder töödeldud1 = new StringBuilder();
+        for (String nimi : nimeOsad) {
+            töödeldud1.append(nimi.substring(0, 1).toUpperCase())
+                    .append(nimi.substring(1).toLowerCase())
+                    .append(" ");
+        }
+        String töödeldudNimi = töödeldud1.toString().trim();
+
         // kui sisestatud nimi juba eksisteerib, siis "logib sisse" sellesse kontosse
         for (Pangakonto konto : kontod) {
-            if (konto.getKlient().toString().equals(kliendiNimi)) {
+            if (konto.getKlient().toString().equals(töödeldudNimi)) {
                 return konto;
             }
         }
@@ -105,10 +115,20 @@ public class Pank {
                 "Logi sisse/ava konto",
                 JOptionPane.QUESTION_MESSAGE);
 
+        // teisendab riigi algustähed suurteks
+        String[] riigiOsad  = kliendiRiik.split("\\s+");
+        StringBuilder töödeldud2 = new StringBuilder();
+        for (String nimi : riigiOsad) {
+            töödeldud2.append(nimi.substring(0, 1).toUpperCase())
+                    .append(nimi.substring(1).toLowerCase())
+                    .append(" ");
+        }
+        String töödeldudRiik = töödeldud2.toString().trim();
+
         // muidu läheb edasi ja "loob konto"
-        Klient kasutaja = new Klient(kliendiNimi, kliendiRiik);
+        Klient kasutaja = new Klient(töödeldudNimi, töödeldudRiik);
         // algne kontosumma
-        kliendiNimi = JOptionPane.showInputDialog(null,
+        String algneSumma = JOptionPane.showInputDialog(null,
                 "Kui palju raha sinul on kontole panna?",
                 "Ava konto",
                 JOptionPane.QUESTION_MESSAGE);
@@ -123,7 +143,7 @@ public class Pank {
             }
         }
         // loob uue konto
-        Pangakonto kasutajaKonto = new Pangakonto(kasutaja, uusKontoNumber, Double.parseDouble(kliendiNimi));
+        Pangakonto kasutajaKonto = new Pangakonto(kasutaja, uusKontoNumber, Double.parseDouble(algneSumma));
         kontod.add(kasutajaKonto);
 
         return kasutajaKonto;
